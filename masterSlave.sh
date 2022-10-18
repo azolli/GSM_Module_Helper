@@ -1,0 +1,1 @@
+socat -d -d pty,echo=0 pty,echo=0
