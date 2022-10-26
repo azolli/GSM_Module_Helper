@@ -12,7 +12,6 @@
 #include <string>
 #include <vector>
 #include <map>
-#include <curl/curl.h>
 #include "../libs/json.hpp"
 
 namespace fs = std::filesystem;
