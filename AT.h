@@ -7,6 +7,7 @@
  */
 
 #include <iostream>
+#include "serial.cpp"
 
 namespace AT
 {
@@ -14,23 +15,38 @@ namespace AT
     {
 
     private:
-        std::string pin;
+        int sp;
 
     public:
-
-        ATtools(std::string PIN)
+        ATtools(std::string PIN, char *devPath)
         {
-            pin = PIN;
+            sp = configureSerialPort(devPath);
+            int bWritten = write_Serial(sp, "AT+CPIN="+PIN);
+            if(bWritten > 0){
+                read_Serial(sp);
+            }
+        }
+        void call()
+        {
+            int bWritten = write_Serial(sp, "ATD");
+            if(bWritten > 0){
+                read_Serial(sp);
+            }
         }
         void sendMessage()
         {
-            std::cout << "Sending message"
-                      << "\n";
-        };
+            int bWritten = write_Serial(sp, "ATA");
+            if(bWritten > 0){
+                read_Serial(sp);
+            }
+        }
         void httpRequest()
         {
             std::cout << "Making HTTP request"
                       << "\n";
-        };
+        }
+        void closeSerial(){
+            close(sp);
+        }
     };
 };
