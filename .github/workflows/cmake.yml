@@ -33,7 +33,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: GSMHelper-linux_amd64
-        path: ${{github.workspace}}/build/GSMHelper_amd64
+        path: ${{github.workspace}}/build/GSMHelper
 
     #- name: Test
       #working-directory: ${{github.workspace}}/build
@@ -62,7 +62,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: GSMHelper-linux_arm
-          path: ${{github.workspace}}/build/GSMHelper_arm
+          path: ${{github.workspace}}/build/GSMHelper
 
       #- name: Test
         #working-directory: ${{github.workspace}}/build
