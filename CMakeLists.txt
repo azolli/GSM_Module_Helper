@@ -7,3 +7,6 @@ set(SOURCE_FILES src/main.cpp)
 
 # Add executable target with source files listed in SOURCE_FILES variable
 add_executable(GSMHelper ${SOURCE_FILES})
+
+
+#add_test(NAME TestName COMMAND ExecutableToRun arg1 arg2 ...)
