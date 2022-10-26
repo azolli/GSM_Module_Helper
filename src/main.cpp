@@ -20,7 +20,7 @@ using namespace std;
 
 void getConfig(json &configParams)
 {
-    ifstream jsonConfig("./config/params.json");
+    ifstream jsonConfig("../config/params.json");
     json conf = json::parse(jsonConfig);
     configParams = conf;
 
