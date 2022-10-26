@@ -13,7 +13,7 @@
 #include <vector>
 #include <map>
 #include <curl/curl.h>
-#include "json.hpp"
+#include "../libs/json.hpp"
 
 namespace fs = std::filesystem;
 using json = nlohmann::json;
@@ -21,7 +21,7 @@ using namespace std;
 
 void getConfig(json &configParams)
 {
-    ifstream jsonConfig("params.json");
+    ifstream jsonConfig("./config/params.json");
     json conf = json::parse(jsonConfig);
     configParams = conf;
 
